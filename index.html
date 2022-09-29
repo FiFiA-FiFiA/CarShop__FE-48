@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+  <script src="./js/main.js" defer></script>
+
+  <title>auto shop</title>
+</head>
+
+<body>
+
+  <div class="container">
+    <header>
+      <logo class="logo">
+        <img src="./image/logo.png" alt="">
+      </logo>
+      <div class="icon__wrapper">
+        <div class="add__to__car" add__to__car__btn>
+          <i class="fas fa-plus"></i>
+          <span>Add To Car</span>
+        </div>
+        <div class="bars__icon" bars__icon>
+          <i class="fas fa-bars"></i>
+        </div>
+      </div>
+    </header>
+
+    <div class="filter__container" filter__container>
+      <div class="filter__overlay" filter__overlay></div>
+      <nav class="nav__filter">
+        <div class="filter__header">
+          <h2>Filter</h2>
+          <div class="filter__close__btn" filter__close__btn>
+            <i class="fa fa-times"></i>
+          </div>
+        </div>
+
+        <div class="filter__selected__wrapper" filter__selected__wrapper></div>
+
+        <div class="clear__btn" clear__btn>
+          <i class="fa fa-filter"></i>
+          <span>Clear All Filter</span>
+        </div>
+
+        <div class="input__filter__wrapper">
+
+          <div class="label">
+
+            <span>Manufacturer</span>
+
+            <div class="select__wrapper input " select__wrapper>
+
+              <div class="manufacturer__selected selected"><span class="select__inner" select__manufacturer__inner>Select Manufacturer</span><i class="fa fa-angle-down"></i></div>
+
+              <div class="options__container" manufacturer__options__container></div>
+            </div>
+          </div>
+
+          <div class="label">
+            <span>Model</span>
+            <div class="select__wrapper input " select__wrapper>
+
+              <div class="manufacturer__selected selected"><span class="select__inner" select__model__inner>Select Model</span> <i class="fa fa-angle-down"></i></div>
+
+              <div class="options__container" model__options__container></div>
+            </div>
+          </div>
+
+          <div class="label">
+            <span>Category</span>
+            <div class="select__wrapper input " select__wrapper>
+
+              <div class="manufacturer__selected selected"><span class="select__inner" select__category__inner>Select Category</span> <i class="fa fa-angle-down"></i></div>
+
+              <div class="options__container" category__options__container></div>
+            </div>
+          </div>
+
+          <div class="range__wrapper z_index-1">
+            <div class="label">
+              <span>Year From</span>
+              <input type="number" placeholder="1970" class="input" id="input__Year__from" input__Year__from>
+            </div>
+            <div class="label">
+              <span>To</span>
+              <input type="number" placeholder="2022" class="input" id="input__Year__To" input__Year__To>
+            </div>
+          </div>
+
+          <div class="range__wrapper z_index-1">
+            <div class="label">
+              <span>Price From</span>
+              <input type="number" placeholder="1" class="input" id="input__Price__From" input__Price__From>
+            </div>
+            <div class="label">
+              <span>To</span>
+              <input type="number" placeholder="100000" class="input" id="input__Price__To" input__Price__To>
+            </div>
+          </div>
+        </div>
+
+        <div class="search__btn__wrapper">
+          <button class="btn search__btn" search__btn>Search Now</button>
+        </div>
+      </nav>
+    </div>
+
+    <div class="add__car__container" add__car__container>
+      <div class="add__car__overlay" add__car__overlay></div>
+
+      <div class="add__car__wrapper">
+
+        <div class="add__car__header">
+          <h2>Add To Car</h2>
+          <div class="add__car__close__btn" add__car__close__btn>
+            <i class="fa fa-times"></i>
+          </div>
+        </div>
+
+        <div class="input__add__car__wrapper">
+
+          <label for="input__add__car__manufacturer">
+        <span>Manufacturer</span>
+        <input type="text" class="input" id="input__add__car__manufacturer" input__add__car__manufacturer>
+      </label>
+
+          <label for="input__add__car__model">
+        <span>Model</span>
+        <input type="text" class="input" id="input__add__car__model" input__add__car__model>
+      </label>
+
+          <label for="input__add__car__category">
+        <span>Category</span>
+        <input type="text" class="input" id="input__add__car__category" input__add__car__category>
+      </label>
+
+          <label for="input__add__car__Year__From">
+        <span>Year</span>
+        <input type="number" placeholder="1970-2022" class="input" id="input__add__car__Year__From" input__add__car__Year__from>
+      </label>
+
+
+          <label for="input__add__car__Price__From">
+        <span>Price</span>
+        <input type="number" placeholder="1-up" class="input" id="input__add__car__Price__From" input__add__car__Price__From>
+      </label>
+
+        </div>
+
+        <div class="add__car__btn__wrapper">
+          <button class="btn add__car__btn" add__btn>Add Car</button>
+        </div>
+      </div>
+    </div>
+
+    <main>
+      <div class="main__header">
+        <h2>Explore</h2>
+        <div class="delete__btn" delete__btn>
+          <i class="fa fa-trash"></i>
+          <span>Delete All</span>
+        </div>
+      </div>
+
+      <div class="cars__wrapper" cars__wrapper></div>
+    </main>
+
+    <div class="error__text__wrapper" error__text__wrapper>
+      <h2 class="error__text" error__text></h2>
+    </div>
+
+    <div class="warning__container" warning__container>
+
+      <div class="warning__container__overlay" warning__container__overlay></div>
+
+      <div class="layout__wrapper">
+
+        <h2 class="warning__text" warning__text>Are you sure</h2>
+
+        <div class="btn__wrapper">
+          <button class="cancle__btn" cancle__btn>
+          <span>Cancle</span>
+        </button>
+          <button class="delete__btn" delete__all__btn>
+          <i class="fa fa-trash"></i>
+          <span>Delete Now</span>
+        </button>
+        </div>
+
+      </div>
+
+    </div>
+
+    <footer>
+      <p>Made by <a href="#">@FSOCIETY</a></p>
+    </footer>
+
+  </div>
+
+</body>
+
+</html>
