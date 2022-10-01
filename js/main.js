@@ -8,6 +8,34 @@ let CAR__DATA = [{
     price: "60,000$"
   },
   {
+    manufacturer: "MERCEDES-BENZ",
+    model: "C 63 AMG",
+    category: "sedan",
+    year: "2016",
+    price: "70,000$"
+  },
+  {
+    manufacturer: "MERCEDES-BENZ",
+    model: "C 63 AMG",
+    category: "sedan",
+    year: "2019",
+    price: "100,000$"
+  },
+  {
+    manufacturer: "MERCEDES-BENZ",
+    model: "C 63",
+    category: "sedan",
+    year: "2016",
+    price: "50,000$"
+  },
+  {
+    manufacturer: "MERCEDES-BENZ",
+    model: "C 63",
+    category: "sedan",
+    year: "2018",
+    price: "90,000$"
+  },
+  {
     manufacturer: "MERCEDES",
     model: "G-Class AMG",
     category: "Jeep",
@@ -15,18 +43,102 @@ let CAR__DATA = [{
     price: "28,800$"
   },
   {
-    manufacturer: "TOYOTA",
-    model: "Aqua",
-    category: "Hatchback",
-    year: "2014",
-    price: "6,000$"
+    manufacturer: "MERCEDES",
+    model: "A-Class",
+    category: "Sedan",
+    year: "2021",
+    price: "60,500$"
   },
   {
-    manufacturer: "HYUNDAI",
-    model: "Tucson",
+    manufacturer: "MERCEDES",
+    model: "C-Class AMG",
+    category: "Sedan",
+    year: "2021",
+    price: "80,000$"
+  },
+  {
+    manufacturer: "MERCEDES",
+    model: "C-Class",
+    category: "Sedan",
+    year: "2020",
+    price: "60,000$"
+  },
+  {
+    manufacturer: "Audi",
+    model: "a4",
+    category: "sedan",
+    year: "2017",
+    price: "50,000$"
+  },
+  {
+    manufacturer: "Audi",
+    model: "a4",
+    category: "sedan",
+    year: "2017",
+    price: "60,000$"
+  },
+  {
+    manufacturer: "Audi",
+    model: "a4",
+    category: "sedan",
+    year: "2018",
+    price: "60,000$"
+  },
+  {
+    manufacturer: "Audi",
+    model: "a7",
+    category: "sedan",
+    year: "2019",
+    price: "70,000$"
+  },
+  {
+    manufacturer: "Audi",
+    model: "a7",
+    category: "sedan",
+    year: "2020",
+    price: "80,000$"
+  },
+  {
+    manufacturer: "BMW",
+    model: "M5",
+    category: "Sedan",
+    year: "2017",
+    price: "60,000$"
+  },
+  {
+    manufacturer: "BMW",
+    model: "M5",
+    category: "Sedan",
+    year: "2019",
+    price: "80,800$"
+  },
+  {
+    manufacturer: "BMW",
+    model: "X7",
     category: "Jeep",
+    year: "2018",
+    price: "70,800$"
+  },
+  {
+    manufacturer: "BMW",
+    model: "X8",
+    category: "Jeep",
+    year: "2019",
+    price: "80,000$"
+  },
+  {
+    manufacturer: "BMW",
+    model: "i8",
+    category: "Sedan",
+    year: "2021",
+    price: "75,000$"
+  },
+  {
+    manufacturer: "BMW",
+    model: "i9",
+    category: "Sedan",
     year: "2022",
-    price: "47,800$"
+    price: "95,000$"
   },
 ]
 
@@ -153,8 +265,6 @@ function Check__Filter__wrapper() {
     select__model__inner.innerText = "Select Model";
     select__category__inner.innerText = "Select Category";
   }
-
-
 }
 
 function openClose__filter__Dropdown() {
