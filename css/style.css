@@ -258,7 +258,7 @@ body {
 
 .filter__container .nav__filter .clear__btn {
   margin: 1rem 1rem 0.5rem 1rem;
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   gap: 1rem;
@@ -276,6 +276,7 @@ body {
 
 .filter__container .nav__filter .clear__btn.active {
   opacity: 1;
+  display: flex;
   pointer-events: painted;
 }
 
@@ -315,6 +316,7 @@ body {
   padding: 1rem;
   border: var(--border-dark-1);
   border-radius: var(--border-radius-1);
+  background: var(--text-clr-light);
 }
 
 .filter__container .nav__filter .input__filter__wrapper span {
@@ -333,6 +335,8 @@ body {
   transition: var(--def-transition);
   border-radius: var(--border-radius-1);
   z-index: 0;
+  background: var(--text-clr-light);
+  user-select: none;
 }
 
 .filter__container .nav__filter .input__filter__wrapper .input:focus {
@@ -367,6 +371,11 @@ body {
   border-color: var(--primary-clr-light);
   outline-color: var(--primary-clr-light);
   box-shadow: 0rem 0rem 0.5rem var(--primary-clr-light);
+}
+
+.filter__container .nav__filter .input__filter__wrapper .select__wrapper.disabled {
+  opacity: 0.5;
+  pointer-events: none;
 }
 
 .filter__container .nav__filter .input__filter__wrapper .select__wrapper.active .selected i {
@@ -584,7 +593,7 @@ body {
   border-radius: var(--border-radius-1);
 }
 
-input__add__car__wrapper .add__car__container .add__car__wrapper .input__add__car__wrapper span {
+.input__add__car__wrapper .add__car__container .add__car__wrapper .input__add__car__wrapper span {
   color: var(--label-clr-dark);
   font-size: var(--font-size-4);
   font-weight: 600;
