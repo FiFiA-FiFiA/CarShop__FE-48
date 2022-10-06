@@ -1,146 +1,40 @@
-// "use strict";
+"use strict";
 
-let CAR__DATA = [{
-    manufacturer: "MERCEDES-BENZ",
-    model: "C 63 AMG",
-    category: "sedan",
-    year: "2015",
-    price: "60,000$"
-  },
-  {
-    manufacturer: "MERCEDES-BENZ",
-    model: "C 63 AMG",
-    category: "sedan",
-    year: "2016",
-    price: "70,000$"
-  },
-  {
-    manufacturer: "MERCEDES-BENZ",
-    model: "C 63 AMG",
-    category: "sedan",
-    year: "2019",
-    price: "100,000$"
-  },
-  {
-    manufacturer: "MERCEDES-BENZ",
-    model: "C 63",
-    category: "sedan",
-    year: "2016",
-    price: "50,000$"
-  },
-  {
-    manufacturer: "MERCEDES-BENZ",
-    model: "C 63",
-    category: "sedan",
-    year: "2018",
-    price: "90,000$"
-  },
-  {
-    manufacturer: "MERCEDES",
-    model: "G-Class AMG",
-    category: "Jeep",
-    year: "2021",
-    price: "28,800$"
-  },
-  {
-    manufacturer: "MERCEDES",
-    model: "A-Class",
-    category: "Sedan",
-    year: "2021",
-    price: "60,500$"
-  },
-  {
-    manufacturer: "MERCEDES",
-    model: "C-Class AMG",
-    category: "Sedan",
-    year: "2021",
-    price: "80,000$"
-  },
-  {
-    manufacturer: "MERCEDES",
-    model: "C-Class",
-    category: "Sedan",
-    year: "2020",
-    price: "60,000$"
-  },
-  {
-    manufacturer: "Audi",
-    model: "a4",
-    category: "sedan",
-    year: "2017",
-    price: "50,000$"
-  },
-  {
-    manufacturer: "Audi",
-    model: "a4",
-    category: "sedan",
-    year: "2017",
-    price: "60,000$"
-  },
-  {
-    manufacturer: "Audi",
-    model: "a4",
-    category: "sedan",
-    year: "2018",
-    price: "60,000$"
-  },
-  {
-    manufacturer: "Audi",
-    model: "a7",
-    category: "sedan",
-    year: "2019",
-    price: "70,000$"
-  },
-  {
-    manufacturer: "Audi",
-    model: "a7",
-    category: "sedan",
-    year: "2020",
-    price: "80,000$"
-  },
-  {
-    manufacturer: "BMW",
-    model: "M5",
-    category: "Sedan",
-    year: "2017",
-    price: "60,000$"
-  },
-  {
-    manufacturer: "BMW",
-    model: "M5",
-    category: "Sedan",
-    year: "2019",
-    price: "80,800$"
-  },
-  {
-    manufacturer: "BMW",
-    model: "X7",
-    category: "Jeep",
-    year: "2018",
-    price: "70,800$"
-  },
-  {
-    manufacturer: "BMW",
-    model: "X8",
-    category: "Jeep",
-    year: "2019",
-    price: "80,000$"
-  },
-  {
-    manufacturer: "BMW",
-    model: "i8",
-    category: "Sedan",
-    year: "2021",
-    price: "75,000$"
-  },
-  {
-    manufacturer: "BMW",
-    model: "i9",
-    category: "Sedan",
-    year: "2022",
-    price: "95,000$"
-  },
-]
+class Car {
+  constructor(manufacturer, model, category, year, price) {
+    this.manufacturer = manufacturer;
+    this.model = model;
+    this.category = category;
+    this.year = year;
+    this.price = `${price} $`;
+  }
+}
+
+var CAR__DATA = [
+  new Car("Mercedes", "C 63 AMG", "Sedan", 2020, 36500),
+  new Car("BMW", "330", "Sedan", 2018, 26000),
+  new Car("Mercedes", "G-Class", "Jeep", 2017, 43000),
+  new Car("BMW", "320", "Sedan", 2021, 32000),
+  new Car("Mercedes", "G-Class AMG", "Jeep", 2021, 52000),
+  new Car("Audi", "A7", "Sedan", 2017, 28000),
+  new Car("Mercedes", "G-Class", "Jeep", 2019, 35000),
+  new Car("BMW", "330", "Sedan", 2016, 24000),
+  new Car("Mercedes", "C 63 AMG", "Sedan", 2021, 41000),
+  new Car("BMW", "550", "Sedan", 2017, 28000),
+  new Car("Mercedes", "A-Class", "Hatchback", 2019, 34000),
+  new Car("BMW", "320", "Sedan", 2013, 26000),
+  new Car("Mercedes", "E-Class", "Suv", 2017, 41000),
+  new Car("BMW", "550", "Sedan", 2012, 21000),
+  new Car("Audi", "A7", "Sedan", 2019, 35000),
+  new Car("Audi", "A4", "Sedan", 2021, 43000),
+  new Car("BMW", "330", "Sedan", 2019, 23000),
+  new Car("Mercedes", "E-Class", "Suv", 2021, 45000),
+  new Car("Mercedes", "A-Class AMG", "Hatchback", 2019, 34000),
+  new Car("Audi", "A4", "Sedan", 2018, 30000),
+  new Car("Mercedes", "C 63", "Sedan", 2019, 28000),
+];
+
+const Data = new Date();
 
 // modal
 const add__car__btn = document.querySelector('[add__to__car__btn]');
@@ -168,41 +62,21 @@ const input__add__car__Price__From = document.querySelector("[input__add__car__P
 const add__btn = document.querySelector("[add__btn]");
 
 //filter
-let select__wrapper = document.querySelectorAll("[select__wrapper]");
-let manufacturer__options__container = document.querySelector("[manufacturer__options__container]");
-let model__options__container = document.querySelector("[model__options__container]");
-let category__options__container = document.querySelector("[category__options__container]");
-let select__manufacturer__inner = document.querySelector("[select__manufacturer__inner]");
-let select__model__inner = document.querySelector("[select__model__inner]");
-let select__category__inner = document.querySelector("[select__category__inner]");
-let yearFrom__options__container = document.querySelector("[yearFrom__options__container]");
-let yearTo__options__container = document.querySelector("[yearTo__options__container]");
-let select__yearFrom__inner = document.querySelector("[select__yearFrom__inner]");
-let select__yearTo__inner = document.querySelector("[select__yearTo__inner]");
-let input__Price__From = document.querySelector("[input__Price__From]");
-let input__Price__To = document.querySelector("[input__Price__To]");
 let clear__btn = document.querySelector("[clear__btn]");
 let search__btn = document.querySelector("[search__btn]");
 let filter__selected__wrapper = document.querySelector("[filter__selected__wrapper]");
 
+const manufacturer__selected = document.querySelector("[manufacturer__selected]");
+const model__selected = document.querySelector("[model__selected]");
+const category__selected = document.querySelector("[category__selected]");
+const yearFrom__selected = document.querySelector("[yearFrom__selected]");
+const yearTo__selected = document.querySelector("[yearTo__selected]");
+const priceFrom = document.querySelector("[priceFrom]");
+const priceTo = document.querySelector("[priceTo]");
+
 const error__text__wrapper = document.querySelector("[error__text__wrapper]");
 let error__text = document.querySelector("[error__text]");
 let err__text = "";
-
-let Manufacturer__Filter__Value = "";
-let Model__Filter__Value = "";
-let Category__Filter__Value = "";
-let Manufacturer__Filter__Arr = [];
-let Manufacturer__Arr = [];
-let Model__Filter__Arr = [];
-let Model__Arr = [];
-let Category__Filter__Arr = [];
-let YearFromTo__Arr = [];
-
-let input__PriceFrom__Value = input__Price__From.value;
-let input__PriceTo__Value = input__Price__To.value;
-
-const Data = new Date();
 
 add__car__btn.addEventListener('click', openClose__add__car__container);
 add__car__overlay.addEventListener('click', openClose__add__car__container);
@@ -216,12 +90,8 @@ delete__btn.addEventListener('click', openClose__Warning__container);
 delete__all__btn.addEventListener('click', Delete__All__Cars);
 warning__container__overlay.addEventListener('click', openClose__Warning__container);
 cancle__btn.addEventListener('click', openClose__Warning__container);
-clear__btn.addEventListener('click', Clear__All__Filter);
-// search__btn.addEventListener('click', Search__All__Result);
+search__btn.addEventListener('click', Get__Search__Info);
 
-select__wrapper.forEach(select => {
-  select.addEventListener("click", openClose__filter__Dropdown)
-})
 
 window.addEventListener("scroll", () => {
   if (window.scrollY > 0) {
@@ -258,153 +128,140 @@ function openClose__filter__container() {
   }
 }
 
-// ==================================================
-
-function Get__ALL__Cars__Data() {
-  Set__option__value();
-}
-
-Get__ALL__Cars__Data();
-
-function openClose__filter__Dropdown() {
-
-  select__wrapper.forEach(sel => {
-    if (this.classList.contains('active')) {
-      this.classList.remove('active');
-      this.style.zIndex = "0";
-    } else {
-      select__wrapper.forEach(sel => {
-        sel.classList.remove('active');
-        sel.style.zIndex = "0"
-      });
-      this.classList.add('active');
-      this.style.zIndex = "3";
-    }
-  })
-
-
-}
-
 // ===========================================================
 
-function Set__option__value() {
+function Create__Option__Manufacturer() {
+  manufacturer__selected.innerHTML = "";
+  let manufacturer__options = document.createElement("option");
+  manufacturer__options.setAttribute("value", "");
+  manufacturer__options.innerText = "Select Manufacturer";
+  manufacturer__selected.appendChild(manufacturer__options);
+
+  let temp = [];
+
   for (const car of CAR__DATA) {
-    Manufacturer__Filter__Arr.push(car.manufacturer);
-  }
-  for (const car of CAR__DATA) {
-    Model__Filter__Arr.push(car.model);
-  }
-  for (const car of CAR__DATA) {
-    Category__Filter__Arr.push(car.category);
-  }
-  for (let i = 1970; i < Data.getFullYear() + 1; i++) {
-    YearFromTo__Arr.push(i)
+    temp.push(car.manufacturer);
   }
 
-  Manufacturer__Filter__Arr = [...new Set(Manufacturer__Filter__Arr)]
-  Model__Filter__Arr = [...new Set(Model__Filter__Arr)]
-  Category__Filter__Arr = [...new Set(Category__Filter__Arr)];
+  temp = [...new Set(temp)];
 
-  Create__Option__Manufacture();
-}
-
-// ===========================================================
-
-function Create__Option__Manufacture() {
-
-  for (let opt of Manufacturer__Filter__Arr) {
-    let manufacturer__options = document.createElement("div")
+  for (const value of temp) {
+    let manufacturer__options = document.createElement("option")
     manufacturer__options.classList.add("option");
-    manufacturer__options.setAttribute('onclick', 'Create__Option__Model();');
+    manufacturer__options.setAttribute("value", value);
+    manufacturer__options.innerText = value;
 
-    manufacturer__options.innerHTML = `
-        <input type="radio" class="radio" id="${opt}" name="option__model" hidden/>
-        <label for="${opt}">${opt}</label>
-      `;
-
-    manufacturer__options__container.appendChild(manufacturer__options);
-    Get__Option__Value();
+    manufacturer__selected.appendChild(manufacturer__options);
   }
+
+  manufacturer__selected.addEventListener('change', Create__Option__Model);
+  manufacturer__selected.addEventListener('change', Get__Option__Value);
+  manufacturer__selected.addEventListener('change', Create__Option__Category());
+  Create__Option__Model();
 }
 
 // ===========================================================
-
 
 function Create__Option__Model() {
+  let Manufacturer__Value = manufacturer__selected.value;
 
-  model__options__container.innerHTML = '';
-  select__model__inner.innerText = 'Select Model';
-  // Model__Filter__Value = "";
+  if (Manufacturer__Value != "") {
+    model__selected.innerHTML = "";
+    model__selected.classList.remove("disabled");
 
-  let x = CAR__DATA.filter(i => i.manufacturer == Manufacturer__Filter__Value);
-  x = [...new Set(x.map(i => i.model))];
+    let model__options = document.createElement("option");
+    model__options.setAttribute("value", "");
+    model__options.innerText = "Select Model";
 
-  if (Manufacturer__Filter__Value != "") {
-    document.querySelector(".select__wrapper.medel").classList.remove('disabled');
+    model__selected.prepend(model__options)
+
+    let temp = [];
+    let temp__Arr = CAR__DATA.filter(i => i.manufacturer == Manufacturer__Value);
+
+    for (const car of temp__Arr) {
+      temp.push(car.model);
+    }
+
+    temp = [...new Set(temp)];
+
+    for (const value of temp) {
+      let model__options = document.createElement("option")
+      model__options.classList.add("option");
+      model__options.setAttribute("value", value);
+      model__options.innerText = value;
+
+      model__selected.appendChild(model__options);
+    }
+    model__selected.addEventListener('change', Create__Option__Category);
   } else {
-    document.querySelector(".select__wrapper.medel").classList.add('disabled');
+    model__selected.innerHTML = "";
+    model__selected.classList.add("disabled");
+
+    let model__options = document.createElement("option");
+    model__options.setAttribute("value", "");
+    model__options.innerText = "Select Model";
+
+    model__selected.appendChild(model__options);
   }
-
-  for (let opt of x) {
-    let model__options = document.createElement("div")
-    model__options.classList.add("option");
-    model__options.setAttribute('onclick', 'Create__Option__Model();');
-
-    model__options.innerHTML = `
-    <input type="radio" class="radio" id="${opt}" name="option__model" hidden/>
-    <label for="${opt}">${opt}</label>
-  `;
-
-    model__options__container.appendChild(model__options);
-  }
-  Get__Option__Value()
+  Create__Option__Category();
 }
 
 // ===========================================================
 
 function Create__Option__Category() {
+  if (manufacturer__selected.value != "") {
+    category__selected.innerHTML = "";
+    category__selected.classList.remove("disabled");
 
-  category__options__container.innerHTML = '';
-  select__model__inner.innerText = 'Select Category';
+    let category__options = document.createElement("option");
+    category__options.setAttribute("value", "");
+    category__options.innerText = "Select Category";
 
-  for (let opt of Category__Filter__Arr) {
-    let category__options = document.createElement("div")
-    category__options.classList.add("option");
+    category__selected.prepend(category__options);
 
-    category__options.innerHTML = `
-    <input type="radio" class="radio" id="${opt}" name="option__model" hidden/>
-    <label for="${opt}">${opt}</label>
-  `;
+    let temp = [];
+    let temp__Arr = CAR__DATA.filter(i => i.manufacturer == manufacturer__selected.value);
 
-    category__options__container.appendChild(category__options)
+    for (const car of temp__Arr) {
+      temp.push(car.category);
+    }
+
+    temp = [...new Set(temp)];
+
+    for (const value of temp) {
+      let category__options = document.createElement("option")
+      category__options.classList.add("option");
+      category__options.setAttribute("value", value);
+      category__options.innerText = value;
+
+      category__selected.appendChild(category__options);
+    }
+  } else {
+    category__selected.innerHTML = "";
+    category__selected.classList.add("disabled");
+
+    let category__options = document.createElement("option");
+    category__options.setAttribute("value", "");
+    category__options.innerText = "Select Category";
+
+    category__selected.prepend(category__options);
   }
-  Get__Option__Value()
 }
-
-Create__Option__Category()
 
 // ===========================================================
 
 function Create__Option__Year() {
   for (let i = Data.getFullYear(); i > 1990 - 1; i--) {
-    let yearFrom__options = document.createElement("div")
-    yearFrom__options.classList.add("option");
-    let yearTo__options = document.createElement("div")
-    yearTo__options.classList.add("option");
+    let yearFrom__options = document.createElement("option");
+    yearFrom__options.textContent = i;
 
-    yearFrom__options.innerHTML = `
-        <input type="radio" class="radio" id="${i}" name="option__model" hidden/>
-        <label for="${i}">${i}</label>
-      `;
-    yearTo__options.innerHTML = `
-        <input type="radio" class="radio" id="${i}" name="option__model" hidden/>
-        <label for="${i}">${i}</label>
-      `;
+    let yearTo__options = document.createElement("option")
+    yearTo__options.textContent = i;
 
-    yearFrom__options__container.appendChild(yearFrom__options);
-    yearTo__options__container.appendChild(yearTo__options);
-    Get__Option__Value();
+    yearFrom__selected.appendChild(yearFrom__options);
+    yearTo__selected.appendChild(yearTo__options);
   }
+  Get__Option__Value();
 }
 
 Create__Option__Year();
@@ -412,37 +269,128 @@ Create__Option__Year();
 // =============================================================
 
 function Get__Option__Value() {
-  document.querySelectorAll('[manufacturer__options__container] .option').forEach(opt => {
-    opt.addEventListener('click', () => {
-      document.querySelectorAll('[manufacturer__options__container] .option').forEach(o => o.classList.remove('active'));
-      opt.classList.add('active');
+  let Manufacturer__Value = manufacturer__selected.value
 
-      Manufacturer__Filter__Value = opt.querySelector("label").textContent;
-      select__manufacturer__inner.innerText = opt.querySelector("label").textContent;
-    })
-  })
+  if (Manufacturer__Value != "") {
+    search__btn.classList.add("active");
+  } else {
+    search__btn.classList.remove("active");
+  }
+}
 
-  document.querySelectorAll('[model__options__container] .option').forEach(opt => {
-    opt.addEventListener('click', () => {
-      document.querySelectorAll('[model__options__container] .option').forEach(o => o.classList.remove('active'))
+// ===========================================================
 
-      opt.classList.add('active');
+let NEW__CAR__DATA = CAR__DATA;
 
-      Model__Filter__Value = opt.querySelector("label").textContent;
-      select__model__inner.innerText = Model__Filter__Value;
-    })
-  })
+function Get__Search__Info() {
+  const search__query = document.querySelectorAll("[search__query]");
+  NEW__CAR__DATA = CAR__DATA
 
-  document.querySelectorAll('[category__options__container] .option').forEach(opt => {
-    opt.addEventListener('click', () => {
-      document.querySelectorAll('[category__options__container] .option').forEach(o => o.classList.remove('active'))
+  let Manufacturer__Value = manufacturer__selected.value;
+  let model__Value = model__selected.value;
+  let category__Value = category__selected.value;
+  let yearFrom__Value = yearFrom__selected.value;
+  let yearTo__Value = yearTo__selected.value;
+  let priceFrom__Value = priceFrom.value;
+  let priceTo__Value = priceTo.value;
 
-      opt.classList.add('active');
 
-      Category__Filter__Value = opt.querySelector("label").textContent;
-      select__category__inner.innerText = Category__Filter__Value;
-    })
-  })
+  if (Manufacturer__Value == "") {
+    NEW__CAR__DATA = CAR__DATA
+  } else {
+    NEW__CAR__DATA = NEW__CAR__DATA.filter(i => i.manufacturer == Manufacturer__Value)
+  }
+  if (model__Value != "") {
+    NEW__CAR__DATA = NEW__CAR__DATA.filter(i => i.model == model__Value)
+  }
+  if (category__Value != "") {
+    NEW__CAR__DATA = NEW__CAR__DATA.filter(i => i.category == category__Value)
+  }
+  if (yearFrom__Value != "" && yearTo__Value != "") {
+    NEW__CAR__DATA = NEW__CAR__DATA.filter(i => i.year >= yearFrom__Value && i.year <= yearTo__Value)
+  }
+  if (priceFrom__Value != "" && priceTo__Value != "") {
+    NEW__CAR__DATA = NEW__CAR__DATA.filter(i => i.price >= priceFrom__Value && i.price <= priceTo__Value)
+  }
+
+  if (NEW__CAR__DATA != "") {
+
+    for (let query of search__query) {
+      let SearchQuery = query.getAttribute('search__query');
+
+      for (const carData of NEW__CAR__DATA) {
+        if (SearchQuery.indexOf(carData.manufacturer) != -1) {
+          query.classList.add('show');
+          if (model__Value != "") {
+            if (SearchQuery.includes(carData.manufacturer && carData.model)) {
+              query.classList.add('show');
+            } else {
+              query.classList.remove('show');
+            }
+            console.log(category__Value);
+            if (category__Value != "") {
+              if (SearchQuery.includes(carData.manufacturer && carData.category)) {
+                query.classList.add('show');
+              } else {
+                query.classList.remove('show');
+              }
+            }
+          }
+        } else {
+          query.classList.remove('show');
+        }
+      }
+    }
+  } else {
+    Error__Text__Wrapper("Oops! Car is not defind!", "#E31E25", "#db6266");
+  }
+
+  // if (Manufacturer__Value != "") {
+  //   let manufacturer = NEW__CAR__DATA.filter(i => i.manufacturer == i.manufacturer)
+  //   manufacturer = [...new Set(manufacturer.map(i => i.manufacturer))];
+  //   SearchQueryArr.push(manufacturer);
+  // }
+
+  // if (model__Value != "") {
+  //   let model = NEW__CAR__DATA.filter(i => i.model == i.model)
+  //   model = [...new Set(model.map(i => i.model))];
+  //   SearchQueryArr.push(model);
+  // }
+
+  // if (category__Value != "") {
+  //   let category = NEW__CAR__DATA.filter(i => i.category == i.category)
+  //   category = [...new Set(category.map(i => i.category))];
+  //   SearchQueryArr.push(category);
+  // }
+
+  // if (yearFrom__Value != "" && yearTo__Value != "") {
+  //   NEW__CAR__DATA = NEW__CAR__DATA.filter(i => i.year >= yearFrom__Value && i.year <= yearTo__Value);
+  //   NEW__CAR__DATA = [...new Set(NEW__CAR__DATA.map(i => i.year))];
+  //   console.log(NEW__CAR__DATA);
+  // }
+
+  // if (priceFrom__Value != "" && priceTo__Value != "") {
+  //   NEW__CAR__DATA = NEW__CAR__DATA.filter(i => i.price >= priceFrom__Value && i.price <= priceTo__Value);
+  //   console.log(NEW__CAR__DATA);
+  // }
+
+  // let newSearchQueryArr = SearchQueryArr.flatMap(i => i).join('');
+
+  // for (let query of search__query) {
+  //   let SearchQuery = query.getAttribute('search__query');
+
+  //   if (SearchQuery.includes(newSearchQueryArr)) {
+  //      
+  //     query.classList.add('show');
+  //     query.style.display = "flex";
+  //   } else {
+  //     query.classList.remove('show');
+  //      
+  //     query.style.display = "none";
+  //   }
+  // }
+
+  openClose__filter__container();
 }
 
 // ===========================================================
@@ -450,7 +398,7 @@ function Get__Option__Value() {
 function Add__New__Car() {
   let manufacturer__value = input__add__car__manufacturer.value;
   let model__value = input__add__car__model.value;
-  let category__value = input__add__car__category.value.toLowerCase();
+  let category__value = input__add__car__category.value;
   let year__value = input__add__car__Year__from.value;
   let price__value = input__add__car__Price__From.value;
 
@@ -459,15 +407,7 @@ function Add__New__Car() {
 
   if (check__value__not__empty) {
     if (check__yearPrice) {
-      let car__item__arr = {
-        manufacturer: `${manufacturer__value}`,
-        model: `${model__value}`,
-        category: `${category__value}`,
-        year: year__value,
-        price: `${price__value}$`
-      };
-
-      CAR__DATA.unshift(car__item__arr);
+      CAR__DATA.unshift(new Car(manufacturer__value, model__value, category__value, year__value, price__value));
 
       input__add__car__manufacturer.value = "";
       input__add__car__model.value = "";
@@ -475,31 +415,39 @@ function Add__New__Car() {
       input__add__car__Year__from.value = "";
       input__add__car__Price__From.value = "";
 
+      cars__wrapper.innerHTML = "";
+      manufacturer__selected.innerHTML = "";
+
+      let manufacturer__options = document.createElement("option")
+      manufacturer__options.setAttribute("value", "");
+      manufacturer__options.innerText = "Select Manufacturer";
+
+      manufacturer__selected.appendChild(manufacturer__options);
+
+      document.body.scrollIntoView("top")
+      openClose__add__car__container();
+      Get__ALL__Cars__Data();
+
+      Error__Text__Wrapper("Add To Successfully", "#2d2", "#2a2");
     } else {
-      Error__Text__Wrapper("Please check the year input or price input");
+      Error__Text__Wrapper("Please check the year input or price input", "#E31E25", "#db6266");
     }
   } else {
-    Error__Text__Wrapper("input cannot be empty");
+    Error__Text__Wrapper("input cannot be empty", "#E31E25", "#db6266");
   }
 
 }
 
-function Clear__All__Filter() {
-  Manufacturer__Filter__Value = "";
-  Model__Filter__Value = "";
-  Category__Filter__Value = "";
-  Filter__Selected__Value__Arr = [];
-  New__Filter__Selected__Value__Arr = [];
-
-  filter__selected__wrapper.innerHTML = "";
-}
+// =====================================
 
 function Delete__All__Cars() {
   cars__wrapper.innerHTML = "";
   CAR__DATA = [];
 
-  Error__Text__Wrapper("Delete All Cars Data!");
+
+  Error__Text__Wrapper("Delete All Cars Data!", "#E31E25", "#db6266");
   openClose__Warning__container()
+  Get__ALL__Cars__Data();
 
   if (cars__wrapper.innerHTML != "") {
     delete__btn.classList.add('active');
@@ -508,9 +456,12 @@ function Delete__All__Cars() {
   }
 }
 
-function Error__Text__Wrapper(err__text) {
+function Error__Text__Wrapper(err__text, bg__clr, border__clr) {
   error__text__wrapper.classList.add('active');
   error__text.innerText = `${err__text}`;
+  error__text.style.backgroundColor = bg__clr;
+  error__text.style.borderColor = border__clr;
+  error__text.style.outlineColor = border__clr;
   document.body.style.overflow = "hidden";
   setTimeout(() => {
     error__text__wrapper.classList.remove('active');
@@ -518,3 +469,61 @@ function Error__Text__Wrapper(err__text) {
     document.body.style.overflow = "auto";
   }, 2000)
 }
+
+// ==================================================
+
+function Get__ALL__Cars__Data() {
+
+  for (const index in CAR__DATA) {
+
+    let manufacturer = CAR__DATA[index].manufacturer;
+    let model = CAR__DATA[index].model;
+    let category = CAR__DATA[index].category;
+    let year = CAR__DATA[index].year;
+    let price = CAR__DATA[index].price;
+
+    let car__item = document.createElement('div');
+    car__item.classList.add('car__item', 'show');
+    car__item.setAttribute("search__query", `${manufacturer} ${model} ${category} ${year} ${price}`);
+    car__item.setAttribute("car__item", ``);
+
+    car__item.innerHTML = `
+      <div class="content__wrapper">
+        <b class="full__name">${manufacturer} ${model}</b>
+      </div>
+      <div class="content__wrapper">
+        <b class="key">Manufacturer:</b>
+        <span class="value">${manufacturer}</span>
+      </div>
+      <div class="content__wrapper">
+        <b class="key">Model:</b>
+        <span class="value">${model}</span>
+      </div>
+      <div class="content__wrapper">
+        <b class="key">Category:</b>
+        <span class="value">${category}</span>
+      </div>
+      <div class="content__wrapper">
+        <b class="key">Year:</b>
+        <span class="value">${year}</span>
+      </div>
+      <div class="content__wrapper">
+        <b class="key">Price:</b>
+        <span class="value">${price}</span>
+      </div>`;
+
+    cars__wrapper.appendChild(car__item);
+  }
+
+  if (cars__wrapper.innerHTML != "") {
+    delete__btn.classList.add("active");
+  } else {
+    delete__btn.classList.remove("active");
+  }
+
+  Create__Option__Manufacturer();
+}
+
+Get__ALL__Cars__Data();
+
+// =======================================================

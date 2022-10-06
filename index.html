@@ -54,67 +54,55 @@
 
             <span>Manufacturer</span>
 
-            <div class="select__wrapper input " onclick="Get__Option__Value(); Create__Option__Model()" select__wrapper>
+            <select id="manufacturer__selected" class="select__wrapper input" manufacturer__selected>
+              <option value="">Select Manufacturer</option>
+            </select>
 
-              <div class="manufacturer__selected selected"><span class="select__inner" select__manufacturer__inner>Select Manufacturer</span><i class="fa fa-angle-down"></i></div>
-
-              <div class="options__container" manufacturer__options__container></div>
-            </div>
           </div>
 
           <div class="label">
             <span>Model</span>
-            <div class="select__wrapper medel disabled input" select__wrapper>
 
-              <div class="manufacturer__selected selected"><span class="select__inner" select__model__inner>Select Model</span> <i class="fa fa-angle-down"></i></div>
+            <select id="model__selected" class="select__wrapper input disabled" model__selected>
+              <option value="">Select Model</option>
+            </select>
 
-              <div class="options__container" model__options__container></div>
-            </div>
           </div>
 
           <div class="label">
             <span>Category</span>
-            <div class="select__wrapper input " select__wrapper>
 
-              <div class="manufacturer__selected selected"><span class="select__inner" select__category__inner>Select Category</span> <i class="fa fa-angle-down"></i></div>
-
-              <div class="options__container" category__options__container></div>
-            </div>
+            <select id="category__selected" class="select__wrapper input disabled" category__selected>
+              <option value="">Select Category</option>
+            </select>
           </div>
 
           <div class="range__wrapper">
             <div class="label">
               <span>Year From</span>
-              <div class="select__wrapper input" select__wrapper>
 
-                <div class="manufacturer__selected selected"><span class="select__inner" select__yearFrom__inner>Select From</span> <i class="fa fa-angle-down"></i></div>
+              <select id="yearFrom__selected" class="select__wrapper input" yearFrom__selected>
+                <option value="">Select From</option>
+              </select>
 
-                <div class="options__container" yearFrom__options__container></div>
-
-              </div>
-              <!-- <input type="number" placeholder="1970" class="input" id="input__Year__from" input__Year__from> -->
             </div>
             <div class="label">
               <span>To</span>
-              <!-- <input type="number" placeholder="2022" class="input" id="input__Year__To" input__Year__To> -->
-              <div class="select__wrapper input " select__wrapper>
 
-                <div class="manufacturer__selected selected"><span class="select__inner" select__yearTo__inner input__Year__from>Select To</span> <i class="fa fa-angle-down"></i></div>
-
-                <div class="options__container" yearTo__options__container></div>
-
-              </div>
+              <select id="yearTo__selected" class="select__wrapper input" yearTo__selected>
+                <option value="">Select To</option>
+              </select>
             </div>
           </div>
 
           <div class="range__wrapper">
             <div class="label">
               <span>Price From</span>
-              <input type="number" placeholder="1" class="input" id="input__Price__From" input__Price__From>
+              <input type="number" placeholder="Min 1" class="input" id="priceFrom" priceFrom>
             </div>
             <div class="label">
               <span>To</span>
-              <input type="number" placeholder="100000" class="input" id="input__Price__To" input__Price__To>
+              <input type="number" placeholder="1-up" class="input" id="priceTo" priceTo>
             </div>
           </div>
         </div>
