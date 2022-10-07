@@ -298,18 +298,23 @@ function Get__Search__Info() {
   if (Manufacturer__Value == "") {
     NEW__CAR__DATA = CAR__DATA
   } else {
+    NEW__CAR__DATA = CAR__DATA
     NEW__CAR__DATA = NEW__CAR__DATA.filter(i => i.manufacturer == Manufacturer__Value)
   }
   if (model__Value != "") {
+    NEW__CAR__DATA = CAR__DATA
     NEW__CAR__DATA = NEW__CAR__DATA.filter(i => i.model == model__Value)
   }
   if (category__Value != "") {
+    NEW__CAR__DATA = CAR__DATA
     NEW__CAR__DATA = NEW__CAR__DATA.filter(i => i.category == category__Value)
   }
   if (yearFrom__Value != "" && yearTo__Value != "") {
+    NEW__CAR__DATA = CAR__DATA
     NEW__CAR__DATA = NEW__CAR__DATA.filter(i => i.year >= yearFrom__Value && i.year <= yearTo__Value)
   }
   if (priceFrom__Value != "" && priceTo__Value != "") {
+    NEW__CAR__DATA = CAR__DATA
     NEW__CAR__DATA = NEW__CAR__DATA.filter(i => i.price >= priceFrom__Value && i.price <= priceTo__Value)
   }
 
