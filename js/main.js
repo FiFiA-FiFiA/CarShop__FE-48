@@ -316,6 +316,7 @@ function Get__Search__Info() {
   }
 
   if (NEW__CAR__DATA != "") {
+    cars__wrapper.innerHTML = "";
     Get__ALL__Cars__Data(NEW__CAR__DATA);
   } else {
     Error__Text__Wrapper("Oops! Car is not defind!", "#E31E25", "#db6266");
@@ -357,7 +358,7 @@ function Add__New__Car() {
 
       document.body.scrollIntoView("top")
       openClose__add__car__container();
-      Get__ALL__Cars__Data();
+      Get__ALL__Cars__Data(CAR__DATA);
 
       Error__Text__Wrapper("Add To Successfully", "#2d2", "#2a2");
     } else {
@@ -402,8 +403,6 @@ function Error__Text__Wrapper(err__text, bg__clr, border__clr) {
 // ==================================================
 
 function Get__ALL__Cars__Data(New__CAR__DATA) {
-  cars__wrapper.innerHTML = "";
-
   for (const index in New__CAR__DATA) {
     let manufacturer = New__CAR__DATA[index].manufacturer;
     let model = New__CAR__DATA[index].model;
@@ -452,6 +451,6 @@ function Get__ALL__Cars__Data(New__CAR__DATA) {
   Create__Option__Manufacturer();
 }
 
-Get__ALL__Cars__Data(CAR__DATA);
+Get__ALL__Cars__Data(NEW__CAR__DATA);
 
 // =======================================================
