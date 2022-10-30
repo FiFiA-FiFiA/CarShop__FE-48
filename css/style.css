@@ -736,7 +736,7 @@ main .cars__wrapper {
 
 main .cars__wrapper .car__item {
   position: relative;
-  display: none;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
@@ -757,11 +757,6 @@ main .cars__wrapper .car__item {
 main .cars__wrapper .car__item:hover {
   outline-offset: 0.1rem;
   outline-color: var(--primary-clr-light);
-}
-
-main .cars__wrapper .car__item.show {
-  transform: scale(1);
-  display: flex;
 }
 
 .content__wrapper {

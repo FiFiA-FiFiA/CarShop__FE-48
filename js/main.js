@@ -1,5 +1,4 @@
 "use strict";
-
 class Car {
   constructor(manufacturer, model, category, year, price) {
     this.manufacturer = manufacturer;
@@ -283,8 +282,7 @@ function Get__Option__Value() {
 let NEW__CAR__DATA = CAR__DATA;
 
 function Get__Search__Info() {
-  const search__query = document.querySelectorAll("[search__query]");
-  NEW__CAR__DATA = CAR__DATA
+  NEW__CAR__DATA = CAR__DATA;
 
   let Manufacturer__Value = manufacturer__selected.value;
   let model__Value = model__selected.value;
@@ -294,101 +292,35 @@ function Get__Search__Info() {
   let priceFrom__Value = priceFrom.value;
   let priceTo__Value = priceTo.value;
 
-
   if (Manufacturer__Value == "") {
     NEW__CAR__DATA = CAR__DATA
   } else {
+    NEW__CAR__DATA = CAR__DATA;
     NEW__CAR__DATA = NEW__CAR__DATA.filter(i => i.manufacturer == Manufacturer__Value)
   }
   if (model__Value != "") {
+    NEW__CAR__DATA = CAR__DATA;
     NEW__CAR__DATA = NEW__CAR__DATA.filter(i => i.model == model__Value)
   }
   if (category__Value != "") {
-    NEW__CAR__DATA = NEW__CAR__DATA.filter(i => i.category == category__Value)
+    NEW__CAR__DATA = CAR__DATA;
+    NEW__CAR__DATA = NEW__CAR__DATA.filter(i => i.manufacturer == Manufacturer__Value && i.model == model__Value && i.category == category__Value);
   }
   if (yearFrom__Value != "" && yearTo__Value != "") {
-    NEW__CAR__DATA = NEW__CAR__DATA.filter(i => i.year >= yearFrom__Value && i.year <= yearTo__Value)
+    NEW__CAR__DATA = CAR__DATA;
+    NEW__CAR__DATA = NEW__CAR__DATA.filter(i => i.manufacturer == Manufacturer__Value && i.year >= yearFrom__Value && i.year <= yearTo__Value)
   }
   if (priceFrom__Value != "" && priceTo__Value != "") {
-    NEW__CAR__DATA = NEW__CAR__DATA.filter(i => i.price >= priceFrom__Value && i.price <= priceTo__Value)
+    NEW__CAR__DATA = CAR__DATA;
+    NEW__CAR__DATA = NEW__CAR__DATA.filter(i => i.manufacturer == Manufacturer__Value && i.price >= priceFrom__Value && i.price <= priceTo__Value)
   }
 
   if (NEW__CAR__DATA != "") {
-
-    for (let query of search__query) {
-      let SearchQuery = query.getAttribute('search__query');
-
-      for (const carData of NEW__CAR__DATA) {
-        if (SearchQuery.indexOf(carData.manufacturer) != -1) {
-          query.classList.add('show');
-          if (model__Value != "") {
-            if (SearchQuery.includes(carData.manufacturer && carData.model)) {
-              query.classList.add('show');
-            } else {
-              query.classList.remove('show');
-            }
-            console.log(category__Value);
-            if (category__Value != "") {
-              if (SearchQuery.includes(carData.manufacturer && carData.category)) {
-                query.classList.add('show');
-              } else {
-                query.classList.remove('show');
-              }
-            }
-          }
-        } else {
-          query.classList.remove('show');
-        }
-      }
-    }
+    cars__wrapper.innerHTML = "";
+    Get__ALL__Cars__Data(NEW__CAR__DATA);
   } else {
     Error__Text__Wrapper("Oops! Car is not defind!", "#E31E25", "#db6266");
   }
-
-  // if (Manufacturer__Value != "") {
-  //   let manufacturer = NEW__CAR__DATA.filter(i => i.manufacturer == i.manufacturer)
-  //   manufacturer = [...new Set(manufacturer.map(i => i.manufacturer))];
-  //   SearchQueryArr.push(manufacturer);
-  // }
-
-  // if (model__Value != "") {
-  //   let model = NEW__CAR__DATA.filter(i => i.model == i.model)
-  //   model = [...new Set(model.map(i => i.model))];
-  //   SearchQueryArr.push(model);
-  // }
-
-  // if (category__Value != "") {
-  //   let category = NEW__CAR__DATA.filter(i => i.category == i.category)
-  //   category = [...new Set(category.map(i => i.category))];
-  //   SearchQueryArr.push(category);
-  // }
-
-  // if (yearFrom__Value != "" && yearTo__Value != "") {
-  //   NEW__CAR__DATA = NEW__CAR__DATA.filter(i => i.year >= yearFrom__Value && i.year <= yearTo__Value);
-  //   NEW__CAR__DATA = [...new Set(NEW__CAR__DATA.map(i => i.year))];
-  //   console.log(NEW__CAR__DATA);
-  // }
-
-  // if (priceFrom__Value != "" && priceTo__Value != "") {
-  //   NEW__CAR__DATA = NEW__CAR__DATA.filter(i => i.price >= priceFrom__Value && i.price <= priceTo__Value);
-  //   console.log(NEW__CAR__DATA);
-  // }
-
-  // let newSearchQueryArr = SearchQueryArr.flatMap(i => i).join('');
-
-  // for (let query of search__query) {
-  //   let SearchQuery = query.getAttribute('search__query');
-
-  //   if (SearchQuery.includes(newSearchQueryArr)) {
-  //      
-  //     query.classList.add('show');
-  //     query.style.display = "flex";
-  //   } else {
-  //     query.classList.remove('show');
-  //      
-  //     query.style.display = "none";
-  //   }
-  // }
 
   openClose__filter__container();
 }
@@ -426,7 +358,7 @@ function Add__New__Car() {
 
       document.body.scrollIntoView("top")
       openClose__add__car__container();
-      Get__ALL__Cars__Data();
+      Get__ALL__Cars__Data(CAR__DATA);
 
       Error__Text__Wrapper("Add To Successfully", "#2d2", "#2a2");
     } else {
@@ -435,7 +367,6 @@ function Add__New__Car() {
   } else {
     Error__Text__Wrapper("input cannot be empty", "#E31E25", "#db6266");
   }
-
 }
 
 // =====================================
@@ -443,7 +374,6 @@ function Add__New__Car() {
 function Delete__All__Cars() {
   cars__wrapper.innerHTML = "";
   CAR__DATA = [];
-
 
   Error__Text__Wrapper("Delete All Cars Data!", "#E31E25", "#db6266");
   openClose__Warning__container()
@@ -472,19 +402,16 @@ function Error__Text__Wrapper(err__text, bg__clr, border__clr) {
 
 // ==================================================
 
-function Get__ALL__Cars__Data() {
-
-  for (const index in CAR__DATA) {
-
-    let manufacturer = CAR__DATA[index].manufacturer;
-    let model = CAR__DATA[index].model;
-    let category = CAR__DATA[index].category;
-    let year = CAR__DATA[index].year;
-    let price = CAR__DATA[index].price;
+function Get__ALL__Cars__Data(New__CAR__DATA) {
+  for (const index in New__CAR__DATA) {
+    let manufacturer = New__CAR__DATA[index].manufacturer;
+    let model = New__CAR__DATA[index].model;
+    let category = New__CAR__DATA[index].category;
+    let year = New__CAR__DATA[index].year;
+    let price = New__CAR__DATA[index].price;
 
     let car__item = document.createElement('div');
-    car__item.classList.add('car__item', 'show');
-    car__item.setAttribute("search__query", `${manufacturer} ${model} ${category} ${year} ${price}`);
+    car__item.classList.add('car__item');
     car__item.setAttribute("car__item", ``);
 
     car__item.innerHTML = `
@@ -524,6 +451,6 @@ function Get__ALL__Cars__Data() {
   Create__Option__Manufacturer();
 }
 
-Get__ALL__Cars__Data();
+Get__ALL__Cars__Data(NEW__CAR__DATA);
 
 // =======================================================
